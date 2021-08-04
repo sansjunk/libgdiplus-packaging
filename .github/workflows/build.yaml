@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: macOS-10.15
     env:
-      LIBGDIPLUS_VERSION: '6.0.5'
+      LIBGDIPLUS_VERSION: 'main'
     steps:
       - uses: actions/checkout@v2
         with:
