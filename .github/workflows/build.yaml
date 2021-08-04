@@ -8,7 +8,8 @@ jobs:
   build:
     runs-on: macOS-10.15
     env:
-      LIBGDIPLUS_VERSION: 'main'
+      LIBGDIPLUS_BRANCH_VERSION: 'main'
+      LIBGDIPLUS_VERSION: '10.0.0' # Just making this up
     steps:
       - uses: actions/checkout@v2
         with:
@@ -20,7 +21,7 @@ jobs:
       - name: Download sources, install dependencies
         run: |
           cd runtime.osx.10.10-x64.CoreCompat.System.Drawing
-          git clone https://github.com/mono/libgdiplus --depth 1 --single-branch --branch ${LIBGDIPLUS_VERSION}
+          git clone https://github.com/mono/libgdiplus --depth 1 --single-branch --branch ${LIBGDIPLUS_BRANCH_VERSION}
           brew install libtiff giflib libjpeg glib cairo freetype fontconfig libpng
       - name: Build
         run: |
